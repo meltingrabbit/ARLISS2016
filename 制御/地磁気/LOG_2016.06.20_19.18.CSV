@@ -1,0 +1,35 @@
+1967,Sta,Switch ON!
+2014,Sta,Initialize SD OK!
+2032,Sta,Initialize GPS OK!
+2052,Sta,Initialization Finish!
+! Magnet X Y
+
+! MAGNET_X_OFFSET : 151.00
+! MAGNET_Y_OFFSET : 57.00
+! MAGNET_XY_RATIO : 1.00
+7931,Sta,Switch ON!
+7951,Sta,Initialize SD OK!
+10535,Sta,Initialize GPS OK!
+10557,Sta,Initialization Finish!
+! Magnet X Y
+
+! MAGNET_X_OFFSET : 177.00
+! MAGNET_Y_OFFSET : -5.50
+! MAGNET_XY_RATIO : 0.00
+56945,Sta,Switch ON!
+56965,Sta,Initialize SD OK!
+59563,Sta,Initialize GPS OK!
+59583,Sta,Initialization Finish!
+146167,Sta,Switch ON!
+146187,Sta,Initialize SD OK!
+149037,Sta,Initialize GPS OK!
+149057,Sta,Initialization Finish!
+52148,Sta,Switch ON!
+52167,Sta,Initialize SD OK!
+54904,Sta,Initialize GPS OK!
+54925,Sta,Initialization Finish!
+! Magnet X Y
+
+! MAGNET_X_OFFSET : 178.50
+! MAGNET_Y_OFFSET : 76.50
+! MAGNET_XY_RATIO : 1.00

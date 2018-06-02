@@ -1,0 +1,66 @@
+2016/08/20 19:28:54.871 Info   Starting JoyToKey Ver5.8.2
+2016/08/20 19:28:54.871 Info   ExeFile=C:\Docs\Data\東京大学\工学部\授業\ARLISS\制御\PS3コントローラー\JoyToKey_5_8_2\JoyToKey\JoyToKey.exe
+2016/08/20 19:28:54.871 Info   ConfigDir=C:\Docs\Data\東京大学\工学部\授業\ARLISS\制御\PS3コントローラー\JoyToKey_5_8_2\JoyToKey\
+2016/08/20 19:28:54.871 Info   IniFile=C:\Docs\Data\東京大学\工学部\授業\ARLISS\制御\PS3コントローラー\JoyToKey_5_8_2\JoyToKey\JoyToKey.ini
+2016/08/20 19:28:54.871 Info   Windows Version = 6.2
+2016/08/20 19:28:54.871 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#217)
+2016/08/20 19:28:54.871 Info   LicenseKey "" is not valid
+2016/08/20 19:28:54.996 Info   Loading XInput1_3.dll (Joystick.cpp#126)
+2016/08/20 19:28:54.996 Info   Initialized XInput (Joystick.cpp#144)
+2016/08/20 19:28:55.143 Info   Detected a DI joystick: {023EF380-670B-11E6-8001-444553540000}, PLAYSTATION(R)3 Controller, PLAYSTATION(R)3 Controller
+2016/08/20 19:28:55.143 Info   Preferred index = 0
+2016/08/20 19:28:55.158 Info   numAxis = 5
+2016/08/20 19:28:55.158 Info   numPOVs = 0
+2016/08/20 19:28:55.158 Info   numButtons = 19
+2016/08/20 19:28:55.158 Info   EnumDeviceObject: Axis offset=0 type=502 name=Z 回転
+2016/08/20 19:28:55.158 Info   EnumDeviceObject: Axis offset=4 type=202 name=Z 軸
+2016/08/20 19:28:55.158 Info   EnumDeviceObject: Axis offset=8 type=102 name=Y 軸
+2016/08/20 19:28:55.158 Info   EnumDeviceObject: Axis offset=12 type=2 name=X 軸
+2016/08/20 19:28:55.158 Info   EnumDeviceObject: Axis offset=16 type=602 name=ポインター
+2016/08/20 19:28:55.158 Info   DetectJoysticks: Detected 1 DI joystick(s)
+2016/08/20 19:28:55.158 Info   Joystick #1: PLAYSTATION(R)3 Controller
+2016/08/20 19:28:55.158 Info   1 joysticks are detected (Joystick.cpp#166)
+2016/08/20 19:28:55.158 Info   ConfigDir=C:\Docs\Data\東京大学\工学部\授業\ARLISS\制御\PS3コントローラー\JoyToKey_5_8_2\JoyToKey\*.cfg (ConfigFileManager.cpp#43)
+2016/08/20 19:28:55.158 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
+2016/08/20 19:28:55.174 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2016/08/20 19:29:02.315 Info   AppLink is temporarily disabled (Main.cpp#1374)
+2016/08/20 19:29:04.799 Info   Disabling joystick processing temporarily (Main.cpp#1386)
+2016/08/20 19:29:07.901 Info   AppLink is enabled now (Main.cpp#1376)
+2016/08/20 19:29:11.448 Info   Enabling joystick processing (Main.cpp#1389)
+2016/08/20 19:29:16.651 Info   Detected a DI joystick: {023EF380-670B-11E6-8001-444553540000}, PLAYSTATION(R)3 Controller, PLAYSTATION(R)3 Controller
+2016/08/20 19:29:16.651 Info   Preferred index = 0
+2016/08/20 19:29:16.651 Info   numAxis = 5
+2016/08/20 19:29:16.651 Info   numPOVs = 0
+2016/08/20 19:29:16.651 Info   numButtons = 19
+2016/08/20 19:29:16.651 Info   EnumDeviceObject: Axis offset=0 type=502 name=Z 回転
+2016/08/20 19:29:16.651 Info   EnumDeviceObject: Axis offset=4 type=202 name=Z 軸
+2016/08/20 19:29:16.651 Info   EnumDeviceObject: Axis offset=8 type=102 name=Y 軸
+2016/08/20 19:29:16.651 Info   EnumDeviceObject: Axis offset=12 type=2 name=X 軸
+2016/08/20 19:29:16.651 Info   EnumDeviceObject: Axis offset=16 type=602 name=ポインター
+2016/08/20 19:29:16.651 Info   DetectJoysticks: Detected 1 DI joystick(s)
+2016/08/20 19:29:16.651 Info   Joystick #1: PLAYSTATION(R)3 Controller
+2016/08/20 19:30:48.973 Info   Detected a DI joystick: {023EF380-670B-11E6-8001-444553540000}, PLAYSTATION(R)3 Controller, PLAYSTATION(R)3 Controller
+2016/08/20 19:30:48.973 Info   Preferred index = 0
+2016/08/20 19:30:48.973 Info   numAxis = 5
+2016/08/20 19:30:48.973 Info   numPOVs = 0
+2016/08/20 19:30:48.973 Info   numButtons = 19
+2016/08/20 19:30:48.973 Info   EnumDeviceObject: Axis offset=0 type=502 name=Z 回転
+2016/08/20 19:30:48.973 Info   EnumDeviceObject: Axis offset=4 type=202 name=Z 軸
+2016/08/20 19:30:48.973 Info   EnumDeviceObject: Axis offset=8 type=102 name=Y 軸
+2016/08/20 19:30:48.973 Info   EnumDeviceObject: Axis offset=12 type=2 name=X 軸
+2016/08/20 19:30:48.973 Info   EnumDeviceObject: Axis offset=16 type=602 name=ポインター
+2016/08/20 19:30:48.973 Info   DetectJoysticks: Detected 1 DI joystick(s)
+2016/08/20 19:30:48.973 Info   Joystick #1: PLAYSTATION(R)3 Controller
+2016/08/20 19:30:53.395 Info   Detected a DI joystick: {023EF380-670B-11E6-8001-444553540000}, PLAYSTATION(R)3 Controller, PLAYSTATION(R)3 Controller
+2016/08/20 19:30:53.395 Info   Preferred index = 0
+2016/08/20 19:30:53.395 Info   numAxis = 5
+2016/08/20 19:30:53.395 Info   numPOVs = 0
+2016/08/20 19:30:53.395 Info   numButtons = 19
+2016/08/20 19:30:53.395 Info   EnumDeviceObject: Axis offset=0 type=502 name=Z 回転
+2016/08/20 19:30:53.395 Info   EnumDeviceObject: Axis offset=4 type=202 name=Z 軸
+2016/08/20 19:30:53.395 Info   EnumDeviceObject: Axis offset=8 type=102 name=Y 軸
+2016/08/20 19:30:53.395 Info   EnumDeviceObject: Axis offset=12 type=2 name=X 軸
+2016/08/20 19:30:53.395 Info   EnumDeviceObject: Axis offset=16 type=602 name=ポインター
+2016/08/20 19:30:53.411 Info   DetectJoysticks: Detected 1 DI joystick(s)
+2016/08/20 19:30:53.411 Info   Joystick #1: PLAYSTATION(R)3 Controller
+2016/08/20 19:33:01.087 Info   Application terminated (Utils\LogFile.cpp#20)

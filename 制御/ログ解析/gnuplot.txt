@@ -1,0 +1,119 @@
+set size square
+
+http://folk.uio.no/hpl/scripting/doc/gnuplot/Kawano/plot1.html
+set size ratio -1
+show size
+
+
+set size ratio -( 1.0 / cos(40 * pi / 180.0))
+replot
+plot "LogGpsPlot.dat" u 4:3 w l
+set tics font "Helvetica,6"
+
+load "LogGpsLabel.dat"
+replot
+
+replot "LogGpsTarPlot.dat"
+
+
+unset key
+replot
+
+
+
+
+set yrange [36.7:36.71]
+set xrange [139.89:139.92]
+
+show autoscale
+
+        autoscaling is  x: OFF,         y: OFF,
+                        x2: ON,         y2: ON,
+                        z: ON,  cb: ON,
+set autoscale x
+set autoscale y
+plot "LogGpsPlot.dat" u 4:3
+
+
+load "LogGpsLabel.dat"
+unset label
+
+
+
+
+
+
+
+
+set yrange [36.79:36.81]
+set xrange [139.89:139.92]
+
+
+
+書式「set tics font "フォント名,大きさ"」で変更できます。
+
+例）　set tics font "Helvetica,30"
+
+
+
+
+
+set terminal emf enhanced "Arial,20"
+　# terminalをemfに変更。上付き下付き有効。フォント設定。
+set output "filename.emf" # ファイル名で保存場所を指定可能
+replot                    # 必要
+set output                # 必要。これで、先ほど作ったemfがcloseされる。
+set terminal wxt          # ターミナルをもとに戻す(wxtでなくても良い)
+
+
+
+
+
+set terminal emf enhanced
+set output "filename.emf"
+replot
+set output
+set terminal wxt
+
+
+
+=========================
+
+plot "LogGpsPlotMeter.dat" u 3:4 w l 
+replot "LogGpsTarPlot.dat"
+
+plot "LogGpsPlotMeter.dat" u 3:4 with linespoints
+replot "LogGpsTarPlot.dat"
+load "LogGpsLabelMeter.dat"
+set size ratio -1
+replot
+unset key
+
+set xlabel "EW [m]"
+set ylabel "NS [m]"
+
+replot
+
+
+set terminal emf enhanced
+set output "filename.emf"
+replot
+set output
+set terminal wxt
+
+
+splot "LogGpsPlotMeter.dat" u 3:4:5 with linespoints
+set view equal xyz
+
+
+
+splot "LogGpsPlotMeter.dat" u 3:4:5 with linespoints
+set view equal xyz
+set xlabel "EW [m]"
+set ylabel "NS [m]"
+set zlabel "H [m]"
+unset key
+replot
+
+
+

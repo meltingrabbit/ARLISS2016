@@ -1,0 +1,88 @@
+
+ステータス移行
+{microsec},Sta,{statusNo./statusName}
+
+メッセージ
+{microsec},Mes,{Message ID},{Message}
+ex) 1000,Mes,Gps,GPS success.
+
+コマンド
+{microsec},ComSD,SetAngle,1000*{TargetRad}
+{microsec},ComSD,RuuUpNearGoal,{meter}
+{microsec},ComSL,GoAhead/GoBack/SpinLeft/SpinRight,{mSec}
+{microsec},ComSL,GoAhead/GoBack/SpinLeft/SpinRight,{mSec}
+{microsec},ComSL,TARGET_LATITUDE/TARGET_LONGITUDE/Mission_Status,{TARGET_LATITUDE}/{TARGET_LONGITUDE}/{Mission_Status}
+{microsec},ComSDL,GoStraight,1000*{TargetRad},{mSec}
+{microsec},ComSDL,SetRoverAngle,1000*{TargetRad},{n}
+
+Spinの時はキャッシュにしないとだめだね．
+Spinのときは角度もログほしいね．
+最大30だから，頑張ればRAMでいけるか？
+
+光
+{microsec},Lit,{X}
+
+GPS
+{microsec},Gps,{hhmmss},{lat},{log},1000*{height},status
+
+地磁気
+{microsec},MagAvg,{n times},1000*{avarage rad}
+{microsec},MagRaw,{X},{Y},{Z}
+{microsec},MagCal,1000*{MAGNET_X_OFFSET},1000*{MAGNET_Y_OFFSET},1000*{MAGNET_XY_RATIO},{max range},xMaxs,{xMins}...,xMaxs,{xMins}...,yMaxs,{yMaxs}...,xMins,{xMins}...,
+
+加速度
+{microsec},Acc,{X},{Y},{Z}
+
+撮影OK？
+{microsec},Pho,{Filename},{status}
+
+写真撮影前後でGPS，地磁気，加速度
+
+
+
+音
+・初期化エラー [*]
+・CacheFull [*]
+・カメラ撮影中
+・SDエラー [*]
+・GPS取得エラー [*]
+・上下反転
+・SD書き込み中 電源切るな
+
+[*] は処理を中断してパルス状の音が可能
+それ以外は処理を続行しながらなので，単一波長かつ連続音
+
+
+
+・GpsLL2Degってなんの略？
+・GpsLL2Degってデバッグした？
+　これ，分→度になってない気がする．
+・CutStr2Longってデバッグした？
+　strncopyのとこで，length >= digitでnull文字が消失して，次読む時にオーバーランしそう．
+・LIGHTのしきい値はconstの方がいいな
+・ddd,ddd,ddd 9桁必要じゃない？
+　137,123,123くらい．つまり，10e6倍
+・あと，光って，光が来たら0でこないと1023だよ?
+・GPS周りのifがおかしい
+・Calc距離方位だけど
+	long latRad = Deg2Rad(Gps_Lat);
+	long gapLatRad = Deg2Rad(gapLat);
+	long gapLongRad = Deg2Rad(gapLong);
+
+	long gapX = EARTH_RADIUS * gapLongRad * cos(latRad);			//直交座標として計算
+	long gapY = EARTH_RADIUS * gapLatRad;			//さらにM_PI/180より、max20000 一度2乗しても大丈夫なはず
+　ここら辺まずそう．Deg2Radに10e6倍されたままの角度ぶち込んだら死ぬのと，
+　gpsX，gpsYはメートルだからdoubleかな．gapLongRad，gapLatRadもdoubleのはずだね．
+　座標の差分とった時点で桁落ちするから，そのタイミングでdoubleに直すのがまるそう．
+・voidでもreturnしておいてね．（これはこっちで修正済み）
+・Gps_Height = Gps_Raw_Arr[16] + 0.01 * CutStr2Deg(Gps_Raw_Arr[6], 2);
+　って
+　Gps_Height = Gps_Raw_Arr[16] + 0.01 * CutStr2Long(Gps_Raw_Arr[6], 2);
+　のミス？（これはこっちで修正済み）
+・Gps_Height = Gps_Raw_Arr[16] + 0.01 * CutStr2Long(Gps_Raw_Arr[6], 2);			//コピーできないので元配列から直接
+　ここ，型がいろいろおかしくてコンパイル通らない．あと，そもそもindexめちゃくちゃだし．（コンパイル通らないのでコメントアウトしてる）
+
+
+
+SD書き込み中にマイコンの電源抜くと死ぬ．
+SD書き込み中は音を鳴らそう．

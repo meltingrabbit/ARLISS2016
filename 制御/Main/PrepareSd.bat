@@ -1,0 +1,1 @@
+python PrepareSd.py
