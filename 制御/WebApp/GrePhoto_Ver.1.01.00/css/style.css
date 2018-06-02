@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/* スタイルシートのリセット */
+
+
+
+body,div,dl,dt,dd,ul,li,ol,li,
+h1,h2,h3,h4,h5,form,p,
+table,th,td,address,input{
+	margin:0px;
+	padding:0px;
+}
+
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	line-height:1.9;
+	font-size: 2.0em;
+	font-family:"Hiragino Kaku Gothic W3", "Hiragino Kaku Gothic Pro", "メイリオ",  Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	position: relative;
+}
+
+img{
+	border:0;
+}
+
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+
+ul,li,ol,li{
+	list-style:none;
+}
+
+a, a:link, a:visited{
+	outline:none;
+	text-decoration:none;
+}
+
+address{
+	font-style:normal;
+}
+
+textarea{
+	width:98%;
+	margin:5px 0;
+}
+
+iframe{
+	border:none;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+/* clearfix */
+
+.clearfix{
+	/zoom:1;
+}
+
+.clearfix:after{
+	content:'';
+	display:block;
+	clear:both;
+	height:0;
+}
+
+/* main */
+
+#Main {
+	width: 960px;
+	margin: 50px auto 50px;
+	/*background-color: green;*/
+}
+
+h3 {
+
+}
+
+.left {
+	/*background-color: blue;*/
+}
+
+.right {
+	/*background-color: yellow;*/
+}
+
+#Sub10 img {
+	width: 100px;
+	height: 100px;
+}
+
+#Sub10 h3 {
+	width: 850px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+#DropZone {
+	margin: 20px;
+	margin-bottom: 40px;
+	border: 2px dashed #bbb;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 25px;
+	text-align: center;
+	font: 20pt bold 'Vollkorn';
+	color: #bbb;
+}
+
+#ListDiv {
+	width: 300px;
+	height: 590px;			/* 600 - 2 * padding */
+	overflow:auto;
+	padding:5px;
+	/*border:2px dotted #ffffff;*/
+	/*color:#e8e8e8;*/
+	background-color:#A8EFAF;
+	line-height:1.5;
+	font-size: 16px;
+}
+
+#ListDiv tr:hover {
+	cursor: pointer;
+}
+
+#ListDiv td {
+	text-align: right;;
+}
+
+#ListDiv td {
+	width: 140px;
+}
+
+#ListDiv td.time {
+	width: 120px;
+}
+
+.map-embed {
+	width: 600px;
+	height: 600px;
+/*	max-width: 100%;
+	height: 0;*/
+	margin: 0;
+	padding: 0;
+
+	overflow: hidden;
+
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.map-embed > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	padding: 0;
+}
+
+.map-embed img {
+	max-width: none;
+}
+
+#DropFileList {
+	margin-top: 50px;
+	padding: 30px;
+	line-height:1.5;
+	font-size: 16px
+}
+
+#DropFileList img {
+	width: 100px;
+}

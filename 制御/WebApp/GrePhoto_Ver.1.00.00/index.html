@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>GrePhoto</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="shortcut icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
+	<script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+<!--
+ 	Google API
+ 	http://www.ajaxtower.jp/googlemaps/charset/index1.html
+ 	https://syncer.jp/google-maps-javascript-api-matome
+	ryo.android.development@gmail.com
+	API key
+	AIzaSyAIRY6yV4QHZ1shOtFxiHnt_AZuV7zogX8
+	 -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIRY6yV4QHZ1shOtFxiHnt_AZuV7zogX8"></script>
+
+	<!-- ページ内移動をスムーズに -->
+	<script type="text/javascript">
+	$(function(){
+		$('a[href^=#]').click(function(){
+			var speed = 300;
+			var href= $(this).attr("href");
+			var target = $(href == "#" || href == "" ? 'html' : href);
+			var position = target.offset().top;
+			$("html, body").animate({scrollTop:position}, speed, "swing");
+			return false;
+		});
+	});
+	</script>
+</head>
+<body>
+
+<div id="JSNG">
+	<p>JavaScript が無効化されています。有効にしてください。</p>
+</div>
+
+<div id="JSOK" style="display:none;">
+
+	<div id="Main">
+		<div id="Sub10" class="clearfix">
+			<div class="left">
+				<img class="pens" src="./img/favicon.png">
+			</div>
+			<div class="right">
+				<h3>GrePhoto（仮）</h3>
+			</div>
+		</div>
+		<div id="Sub20" class="clearfix">
+			<div id="Path" class="left">
+				<!-- <p class="path">&nbsp;&nbsp;&nbsp;パスが選択されていません．</p> -->
+				<p class="path"></p>
+			</div>
+			<div class="right">
+				<div class="button-wrapper">
+					<!-- buttonが押されると，非表示inputが発火 -->
+					<input id="GetPathInput" type="file" name="PicDataCsv" style="display:none;" accept=".csv">
+					<!-- <input id="GetPathInput" type="file" name="PicDataCsv"> -->
+					<button type="button" id="GetPath" class="path">PicData.csv選択</button>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="dummy"></div> -->
+		<div id="Sub30" class="clearfix">
+			<div id="MapDiv" class="left">
+				<!-- 地図のキャンパス -->
+				<div class="map-embed">
+					<div id="MapCanvas">ここに地図が表示されます．</div>
+				</div>
+			</div>
+			<div id="ListDiv" class="right">
+				<table>
+					<tr class="PIC00000">
+						<td class="time">10.1234</td><td>PIC00000.JPG</td>
+					</tr>
+					<tr class="PIC00001">
+						<td class="time">102.1234</td><td>PIC00001.JPG</td>
+					</tr>
+					<tr class="PIC00002">
+						<td class="time">1034.1234</td><td>PIC00002.JPG</td>
+					</tr>
+					<tr class="PIC00003">
+						<td class="time">10232.1234</td><td>PIC00003.JPG</td>
+					</tr>
+					<tr class="PIC00004">
+						<td class="time">43210.1234</td><td>PIC00004.JPG</td>
+					</tr>
+					<tr class="PIC00000">
+						<td class="time">10.1234</td><td>PIC00000.JPG</td>
+					</tr>
+					<tr class="PIC00001">
+						<td class="time">102.1234</td><td>PIC00001.JPG</td>
+					</tr>
+					<tr class="PIC00002">
+						<td class="time">1034.1234</td><td>PIC00002.JPG</td>
+					</tr>
+					<tr class="PIC00003">
+						<td class="time">10232.1234</td><td>PIC00003.JPG</td>
+					</tr>
+					<tr class="PIC00004">
+						<td class="time">43210.1234</td><td>PIC00004.JPG</td>
+					</tr>
+					<tr class="PIC00000">
+						<td class="time">10.1234</td><td>PIC00000.JPG</td>
+					</tr>
+					<tr class="PIC00001">
+						<td class="time">102.1234</td><td>PIC00001.JPG</td>
+					</tr>
+					<tr class="PIC00002">
+						<td class="time">1034.1234</td><td>PIC00002.JPG</td>
+					</tr>
+					<tr class="PIC00003">
+						<td class="time">10232.1234</td><td>PIC00003.JPG</td>
+					</tr>
+					<tr class="PIC00004">
+						<td class="time">43210.1234</td><td>PIC00004.JPG</td>
+					</tr>
+					<tr class="PIC00000">
+						<td class="time">10.1234</td><td>PIC00000.JPG</td>
+					</tr>
+					<tr class="PIC00001">
+						<td class="time">102.1234</td><td>PIC00001.JPG</td>
+					</tr>
+					<tr class="PIC00002">
+						<td class="time">1034.1234</td><td>PIC00002.JPG</td>
+					</tr>
+					<tr class="PIC00003">
+						<td class="time">10232.1234</td><td>PIC00003.JPG</td>
+					</tr>
+					<tr class="PIC00004">
+						<td class="time">43210.1234</td><td>PIC00004.JPG</td>
+					</tr>
+					<tr class="PIC00000">
+						<td class="time">10.1234</td><td>PIC00000.JPG</td>
+					</tr>
+					<tr class="PIC00001">
+						<td class="time">102.1234</td><td>PIC00001.JPG</td>
+					</tr>
+					<tr class="PIC00002">
+						<td class="time">1034.1234</td><td>PIC00002.JPG</td>
+					</tr>
+					<tr class="PIC00003">
+						<td class="time">10232.1234</td><td>PIC00003.JPG</td>
+					</tr>
+					<tr class="PIC00004">
+						<td class="time">43210.1234</td><td>PIC00004.JPG</td>
+					</tr>
+					<tr class="PIC00000">
+						<td class="time">10.1234</td><td>PIC00000.JPG</td>
+					</tr>
+					<tr class="PIC00001">
+						<td class="time">102.1234</td><td>PIC00001.JPG</td>
+					</tr>
+					<tr class="PIC00002">
+						<td class="time">1034.1234</td><td>PIC00002.JPG</td>
+					</tr>
+					<tr class="PIC00003">
+						<td class="time">10232.1234</td><td>PIC00003.JPG</td>
+					</tr>
+					<tr class="PIC00004">
+						<td class="time">43210.1234</td><td>PIC00004.JPG</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+</div>
+
+
+<script>
+	// JS が有効か？
+	document.getElementById("JSOK").style.display = "block";
+	document.getElementById("JSNG").style.display = "none";
+</script>
+<script type="text/javascript" src="./js/script.js"></script>
+
+</body>
+</html>
+
